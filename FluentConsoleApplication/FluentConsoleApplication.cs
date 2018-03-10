@@ -39,6 +39,11 @@ namespace FluentConsoleApplication
             // TOOD: consider quotes when splitting
             var tokens = fullCommand.Split();
 
+            Run(tokens);
+        }
+
+        public void Run(IEnumerable<string> tokens)
+        {
             // TODO: validate full command's string format
             var command = tokens.First();
             var arguments = tokens.Skip(1);

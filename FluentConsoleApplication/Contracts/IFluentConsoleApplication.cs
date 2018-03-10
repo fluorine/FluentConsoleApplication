@@ -23,9 +23,15 @@ namespace FluentConsoleApplication
         IEnumerable<IRunnableCommand> RunnableCommands { get; }
 
         /// <summary>
-        /// Run any command related to <<see cref="this"/> application.
+        /// Run a full command in <<see cref="this"/> application.
         /// </summary>
         /// <param name="fullCommand">Raw input <see cref="string"/> for a command and arguments</param>
         void Run(string fullCommand);
+
+        /// <summary>
+        /// Run a full command as <see cref="string"/> tokens in <<see cref="this"/> application.
+        /// </summary>
+        /// <param name="fullCommand">Raw input <see cref="string"/> for a command and arguments</param>
+        void Run(IEnumerable<string> tokens);
     }
 }
