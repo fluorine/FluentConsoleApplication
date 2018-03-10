@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
+using System;
 using System.Collections;
 
 namespace FluentConsoleApplication.Tests
@@ -163,6 +164,26 @@ namespace FluentConsoleApplication.Tests
 
             // ASSERT
 			fullName.Should().BeEquivalentTo("Joseph Anglada");
+        }
+
+        [Test]
+        public void UsageExample()
+        {
+            // Define application
+            var application = FluentConsoleApplication.Create("Calculator")
+              .DefineCommand("add", "Add two numbers")
+                .WithParameter<int>("X", "First operand")
+                .WithParameter<int>("Y", "Second operand")
+                  .Does(args => Console.WriteLine("Total is " + (args.X + args.Y)))
+              .DefineCommand("mult", "Multiply two numbers")
+                .WithParameter<double>("X", "First operand")
+                .WithParameter<double>("Y", "Second operand")
+                  .Does(args => Console.WriteLine("Total is " + (args.X * args.Y)));
+
+            // Use it
+            application.Run("add 5 2");
+
+            Assert.Pass();
         }
     }
 }
