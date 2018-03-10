@@ -29,7 +29,7 @@ namespace FluentConsoleApplication
         {
         }
 
-        public static IFluentConsoleApplication Create(string applicationName, string applicationDescription)
+        public static IFluentConsoleApplication Create(string applicationName, string applicationDescription = null)
         {
             return new FluentConsoleApplication(applicationName, applicationDescription);
         }
