@@ -1,5 +1,5 @@
 # v0.2.0 beta
-- Generate usage documentation for `DefinedCommand`  and `DefinedParameter` 
+- Generate usage documentation for `DefinedCommand` and `DefinedParameter` 
 
 # v0.1.0 beta
 March 10, 2018, Minimum Viable Product
