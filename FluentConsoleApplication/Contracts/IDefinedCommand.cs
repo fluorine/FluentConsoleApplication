@@ -5,7 +5,7 @@ namespace FluentConsole
     /// <summary>
     /// Defined commmand to be used in the application.
     /// </summary>
-    public interface IDefinedCommand
+    public interface IDefinedCommand: IUsageDocumentation
     {
         /// <summary>
         /// Previous Application's instance associated to this command.

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace FluentConsole
 {
@@ -25,6 +26,27 @@ namespace FluentConsole
             : this(definedCommand.Application, definedCommand.Name, definedCommand.Description)
         {
             Parameters = definedCommand.Parameters.Concat(new[] { definedParameter });
+        }
+
+        public string GetUsageDocumentation()
+        {
+            var usageDocumentation = new StringBuilder();
+            usageDocumentation.Append(Name);
+
+            if (Parameters.Any())
+            {
+                usageDocumentation.Append(" ");
+
+                var parametersUsages = new List<string>();
+                foreach (var parameter in Parameters)
+                {
+                    parametersUsages.Add(parameter.GetUsageDocumentation());
+                }
+
+                usageDocumentation.Append(string.Join(" ", parametersUsages));
+            }
+
+            return usageDocumentation.ToString();
         }
     }
 }

@@ -20,6 +20,11 @@ namespace FluentConsole
             this.parser = parser;
         }
 
+        public string GetUsageDocumentation()
+        {
+            return $"[{Name}]";
+        }
+
         public object GetValue(string value)
         {
             return parser(value);
