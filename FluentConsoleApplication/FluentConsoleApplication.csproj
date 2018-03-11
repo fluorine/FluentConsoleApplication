@@ -43,14 +43,12 @@
   <ItemGroup>
     <Compile Include="Contracts\IDefinedCommand.cs" />
     <Compile Include="Contracts\IDefinedParameter.cs" />
-    <Compile Include="Contracts\IDetailDocumentation.cs" />
     <Compile Include="Contracts\IFluentConsoleApplication.cs" />
     <Compile Include="Contracts\IRunnableCommand.cs" />
     <Compile Include="Implementations\DefinedCommand.cs" />
     <Compile Include="Implementations\DefinedParameter.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="FluentConsoleApplication.cs" />
-    <Compile Include="Contracts\IUsageDocumentation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementations\RunnableCommand.cs" />
   </ItemGroup>
