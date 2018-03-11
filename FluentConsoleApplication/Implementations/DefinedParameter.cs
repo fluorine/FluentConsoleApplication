@@ -20,9 +20,28 @@ namespace FluentConsole
             this.parser = parser;
         }
 
+        public string GetUsageDocumentation()
+        {
+            return $"[{Name}]";
+        }
+
         public object GetValue(string value)
         {
             return parser(value);
+        }
+
+        public string GetUsageDocumentation(bool includeType = true, bool includeDescription = true)
+        {
+            if(string.IsNullOrWhiteSpace(Description) || !includeDescription)
+            {
+                return includeType 
+                    ? $"[{Name}] ({Type.Name})"
+                    : $"[{Name}]";
+            }
+
+            return includeType 
+                ? $"[{Name}] ({Type.Name}) {Description}" 
+                : $"[{Name}] {Description}";
         }
     }
 }

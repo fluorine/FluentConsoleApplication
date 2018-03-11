@@ -170,7 +170,7 @@ namespace FluentConsole.Tests
         public void UsageExample()
         {
             // Define application
-            var application = FluentConsoleApplication.Create("Calculator")
+            var application = FluentConsoleApplication.Create("Calculator", "Application to add or multiply numbers.")
               .DefineCommand("add", "Add two numbers")
                 .WithParameter<int>("X", "First operand")
                 .WithParameter<int>("Y", "Second operand")
@@ -178,10 +178,13 @@ namespace FluentConsole.Tests
               .DefineCommand("mult", "Multiply two numbers")
                 .WithParameter<double>("X", "First operand")
                 .WithParameter<double>("Y", "Second operand")
-                  .Does(args => Console.WriteLine("Total is " + (args.X * args.Y)));
+                  .Does(args => Console.WriteLine("Total is " + (args.X * args.Y)))
+              .DefineCommand("help")
+                  .Does(args => Console.WriteLine(args.Application.GetDocumentation()));
 
             // Use it
             application.Run("add 5 2");
+            application.Run("help");
 
             Assert.Pass();
         }
