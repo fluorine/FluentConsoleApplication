@@ -9,6 +9,8 @@ namespace FluentConsole.Tests
     [TestFixture]
     public class DocumentationTests
     {
+        #region Usage documentation
+
         [Test]
         public void DefinedParameter_GetUsageDocumentation()
         {
@@ -40,5 +42,65 @@ namespace FluentConsole.Tests
             // ASSERT
             documentation.Should().BeEquivalentTo("add [X] [Y]");
         }
+
+        #endregion
+
+        #region Detail documentation
+
+        [Test]
+        public void DefinedParameter_GetFullDetailDocumentation()
+        {
+            // ARRANGE
+            IDefinedParameter definedParameter = new DefinedParameter<int>("test", "Parameter with testing int value", str => 5);
+
+            // ACT
+            string documentation = definedParameter.GetDetailDocumentation();
+
+            // ASSERT
+            documentation.Should().BeEquivalentTo("[test] (Int32) Parameter with testing int value");
+        }
+
+        [Test]
+        public void DefinedParameter_GetDetailDocumentationWithoutDescription()
+        {
+            // ARRANGE
+            IDefinedParameter definedParameter = new DefinedParameter<int>("test", null, str => 5);
+
+            // ACT
+            string documentation = definedParameter.GetDetailDocumentation();
+
+            // ASSERT
+            documentation.Should().BeEquivalentTo("[test] (Int32)");
+        }
+
+
+        [Test]
+        public void DefinedParameter_GetDetailDocumentationWithoutDescriptionNorType()
+        {
+            // ARRANGE
+            IDefinedParameter definedParameter = new DefinedParameter<int>("test", null, str => 5);
+
+            // ACT
+            string documentation = definedParameter.GetDetailDocumentation(includeType: false);
+
+            // ASSERT
+            documentation.Should().BeEquivalentTo("[test]");
+        }
+
+        [Test]
+        public void DefinedParameter_GetDetailDocumentationWithDescriptionWithoutType()
+        {
+            // ARRANGE
+            IDefinedParameter definedParameter = new DefinedParameter<int>("test", "Parameter with testing int value", str => 5);
+
+            // ACT
+            string documentation = definedParameter.GetDetailDocumentation();
+
+            // ASSERT
+            documentation.Should().BeEquivalentTo("[test] (Int32) Parameter with testing int value");
+        }
+
+        #endregion
+
     }
 }
