@@ -1,4 +1,5 @@
 # v0.2.0 beta
+March 11, 2018
 - Generate user documentation for the Application
 - Generate user documentation for `DefinedCommand` and `DefinedParameter`
 - Add automatic dynamic field as argument, called `Application`, with a
