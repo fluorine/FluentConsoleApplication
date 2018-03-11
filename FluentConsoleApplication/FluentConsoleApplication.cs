@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace FluentConsole
 {
@@ -25,7 +26,8 @@ namespace FluentConsole
             RunnableCommands = application.RunnableCommands.Concat(new[] { command });
         }
 
-        public FluentConsoleApplication(IRunnableCommand runnableCommand) : this(runnableCommand.DefinedCommand.Application, runnableCommand)
+        public FluentConsoleApplication(IRunnableCommand runnableCommand) 
+            : this(runnableCommand.DefinedCommand.Application, runnableCommand)
         {
         }
 
@@ -51,7 +53,31 @@ namespace FluentConsole
 
             if (runnableCommand == null) throw new InvalidOperationException("Command does not exist.");
 
-            runnableCommand.Run(arguments);
+            runnableCommand.Run(arguments, this);
+        }
+
+        public string GetDocumentation()
+        {
+            var output = new StringBuilder();
+            output.Append(ToString() + Environment.NewLine);
+
+            foreach(var runnableCommand in RunnableCommands)
+            {
+                output.Append($" - {runnableCommand.DefinedCommand.GetUsageDocumentation(includeDescription: true)}{Environment.NewLine}" );
+            }
+
+            return output.ToString();
+        }
+
+        public override string ToString()
+        {
+            if(string.IsNullOrWhiteSpace(Description))
+            {
+                return $"{Name}";
+            } else
+            {
+                return $"{Name}: {Description}";
+            }
         }
     }
 }

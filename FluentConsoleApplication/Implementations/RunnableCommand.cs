@@ -16,11 +16,15 @@ namespace FluentConsole
             Action = commandAction;
         }
 
-        public void Run(IEnumerable<string> arguments)
+        public void Run(IEnumerable<string> arguments, IFluentConsoleApplication application)
         {
             dynamic packedArguments = new ExpandoObject();
             var keyValueArguments = packedArguments as IDictionary<string, object>;
 
+            // Add current application as part of the arguments
+            keyValueArguments.Add("Application", application);
+
+            // Add parameters as fields and associate provided values
             var parametersEnumerator = DefinedCommand.Parameters.GetEnumerator();
             var argumentsEnumerator = arguments.GetEnumerator();
 

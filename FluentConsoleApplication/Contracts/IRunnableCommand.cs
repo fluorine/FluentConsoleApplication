@@ -21,6 +21,7 @@ namespace FluentConsole
         /// <see cref="string"/> tokens.
         /// </summary>
         /// <param name="arguments"></param>
-        void Run(IEnumerable<string> arguments);
+        /// <param name="application">Application running this <see cref="IRunnableCommand"/></param>
+        void Run(IEnumerable<string> arguments, IFluentConsoleApplication application);
     }
 }

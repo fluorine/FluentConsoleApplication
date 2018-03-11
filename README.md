@@ -12,10 +12,10 @@ An application can be used in many ways:
 
 # Usage example
 
-Define an application:
+**Defining an application**, with all its commands.
 
 ```C#
-var application = FluentConsoleApplication.Create("Calculator")
+var application = FluentConsoleApplication.Create("Calculator", "Application to calculate.")
   .DefineCommand("add", "Add two numbers")
     .WithParameter<int>("X", "First operand")
     .WithParameter<int>("Y", "Second operand")
@@ -24,9 +24,11 @@ var application = FluentConsoleApplication.Create("Calculator")
     .WithParameter<double>("X", "First operand")
     .WithParameter<double>("Y", "Second operand")
       .Does(args => Console.WriteLine("Total is " + (args.X * args.Y)));
+  .DefineCommand("help")
+      .Does(args => Console.WriteLine(args.Application.GetDocumentation()));
 ```
 
-Use the application, invoking a command with the required arguments:
+**Using the application** by invoking a command with its required arguments, if any:
 
 ```C#
 application.Run("add 5 2");
@@ -36,4 +38,19 @@ Output:
 
 ```
 Total is 7
+```
+
+**Automatic documentation** can also be generated for an Application. This documentation is
+based on the names, types and descriptions provided when the application was defined.
+
+In this example, the `help` command generates documentation for the currently running
+application.
+
+Output:
+
+```
+Calculator: Application to calculate.
+ - add [X] [Y] - Add two numbers
+ - mult [X] [Y] - Multiply two numbers
+ - help
 ```

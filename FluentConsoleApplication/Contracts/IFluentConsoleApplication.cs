@@ -33,5 +33,11 @@ namespace FluentConsole
         /// </summary>
         /// <param name="fullCommand">Raw input <see cref="string"/> for a command and arguments</param>
         void Run(IEnumerable<string> tokens);
+
+        /// <summary>
+        /// Get documentation for purpose and usage of the application.
+        /// </summary>
+        /// <returns></returns>
+        string GetDocumentation();
     }
 }
