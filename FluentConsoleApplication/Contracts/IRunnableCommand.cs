@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FluentConsoleApplication
+namespace FluentConsole
 {
     public interface IRunnableCommand
     {

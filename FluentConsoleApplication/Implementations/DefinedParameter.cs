@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FluentConsoleApplication
+namespace FluentConsole
 {
     /// <inheritdoc/>
     public class DefinedParameter<T> : IDefinedParameter

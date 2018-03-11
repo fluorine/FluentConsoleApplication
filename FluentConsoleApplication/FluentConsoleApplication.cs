@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FluentConsoleApplication
+namespace FluentConsole
 {
     /// <inheritdoc/>
     public class FluentConsoleApplication : IFluentConsoleApplication

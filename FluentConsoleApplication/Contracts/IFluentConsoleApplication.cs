@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FluentConsoleApplication
+namespace FluentConsole
 {
     /// <summary>
     /// A Fluent Console Application

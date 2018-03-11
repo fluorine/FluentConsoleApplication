@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FluentConsoleApplication
+namespace FluentConsole
 {
     /// <summary>
     /// Extension methods required to chain multiple methods

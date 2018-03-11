@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FluentConsoleApplication
+namespace FluentConsole
 {
     /// <summary>
     /// A parameter with a name, description and type associated.

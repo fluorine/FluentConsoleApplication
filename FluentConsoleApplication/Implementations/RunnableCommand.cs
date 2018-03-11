@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 
-namespace FluentConsoleApplication
+namespace FluentConsole
 {
     /// <inheritdoc/>
     internal class RunnableCommand : IRunnableCommand

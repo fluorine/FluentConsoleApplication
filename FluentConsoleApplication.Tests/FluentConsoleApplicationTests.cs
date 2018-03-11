@@ -3,7 +3,7 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 
-namespace FluentConsoleApplication.Tests
+namespace FluentConsole.Tests
 {
     [TestFixture]
     public class FluentConsoleApplicationTests
