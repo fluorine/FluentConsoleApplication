@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Contracts\IDefinedCommand.cs" />
     <Compile Include="Contracts\IDefinedParameter.cs" />
+    <Compile Include="Contracts\IDetailDocumentation.cs" />
     <Compile Include="Contracts\IFluentConsoleApplication.cs" />
     <Compile Include="Contracts\IRunnableCommand.cs" />
     <Compile Include="Implementations\DefinedCommand.cs" />

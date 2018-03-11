@@ -29,5 +29,19 @@ namespace FluentConsole
         {
             return parser(value);
         }
+
+        public string GetDetailDocumentation(bool includeType = true)
+        {
+            if(string.IsNullOrWhiteSpace(Description))
+            {
+                return includeType 
+                    ? $"[{Name}] ({Type.Name})"
+                    : $"[{Name}]";
+            }
+
+            return includeType 
+                ? $"[{Name}] ({Type.Name}) {Description}" 
+                : $"[{Name}] {Description}";
+        }
     }
 }

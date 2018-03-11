@@ -1,7 +1,7 @@
 ﻿namespace FluentConsole
 {
     /// <summary>
-    /// Type that can generate use documentation for itself
+    /// Type that can generate usage documentation about itself.
     /// </summary>
     public interface IUsageDocumentation
     {

@@ -5,7 +5,7 @@ namespace FluentConsole
     /// <summary>
     /// A parameter with a name, description and type associated.
     /// </summary>
-    public interface IDefinedParameter: IUsageDocumentation
+    public interface IDefinedParameter: IUsageDocumentation, IDetailDocumentation
     {
         /// <summary>
         /// Name of the parameter.
