@@ -25,7 +25,8 @@ namespace FluentConsole
             RunnableCommands = application.RunnableCommands.Concat(new[] { command });
         }
 
-        public FluentConsoleApplication(IRunnableCommand runnableCommand) : this(runnableCommand.DefinedCommand.Application, runnableCommand)
+        public FluentConsoleApplication(IRunnableCommand runnableCommand) 
+            : this(runnableCommand.DefinedCommand.Application, runnableCommand)
         {
         }
 
