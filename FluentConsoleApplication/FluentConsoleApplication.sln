@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentConsoleApplication", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentConsoleApplication.Tests", "..\FluentConsoleApplication.Tests\FluentConsoleApplication.Tests.csproj", "{04DC2BE1-380F-457B-BF15-6066716BD45A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentConsoleApplication.NuGet", "..\FluentConsoleApplication.NuGet\FluentConsoleApplication.NuGet.csproj", "{AEA3D3AD-56C4-4811-806B-DE563E248138}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
