@@ -28,7 +28,17 @@ namespace FluentConsole
             Parameters = definedCommand.Parameters.Concat(new[] { definedParameter });
         }
 
-        public string GetUsageDocumentation()
+        public string GetUsageDocumentation(bool includeDescription = false)
+        {
+            if(includeDescription && !string.IsNullOrWhiteSpace(Description))
+            {
+                return $"{GetBasicUsageDocumentation()} - {Description}";
+            }
+
+            return GetBasicUsageDocumentation();
+        }
+
+        private string GetBasicUsageDocumentation()
         {
             var usageDocumentation = new StringBuilder();
             usageDocumentation.Append(Name);
@@ -40,7 +50,7 @@ namespace FluentConsole
                 var parametersUsages = new List<string>();
                 foreach (var parameter in Parameters)
                 {
-                    parametersUsages.Add(parameter.GetUsageDocumentation());
+                    parametersUsages.Add(parameter.GetUsageDocumentation(includeType: false, includeDescription: false));
                 }
 
                 usageDocumentation.Append(string.Join(" ", parametersUsages));

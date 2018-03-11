@@ -30,9 +30,9 @@ namespace FluentConsole
             return parser(value);
         }
 
-        public string GetDetailDocumentation(bool includeType = true)
+        public string GetUsageDocumentation(bool includeType = true, bool includeDescription = true)
         {
-            if(string.IsNullOrWhiteSpace(Description))
+            if(string.IsNullOrWhiteSpace(Description) || !includeDescription)
             {
                 return includeType 
                     ? $"[{Name}] ({Type.Name})"

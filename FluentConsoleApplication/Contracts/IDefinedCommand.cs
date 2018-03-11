@@ -5,7 +5,7 @@ namespace FluentConsole
     /// <summary>
     /// Defined commmand to be used in the application.
     /// </summary>
-    public interface IDefinedCommand: IUsageDocumentation
+    public interface IDefinedCommand
     {
         /// <summary>
         /// Previous Application's instance associated to this command.
@@ -26,5 +26,12 @@ namespace FluentConsole
         /// Parameters define the arguments required for this command to run.
         /// </summary>
         IEnumerable<IDefinedParameter> Parameters { get; }
+
+        /// <summary>
+        /// Usage documentation for this command
+        /// </summary>
+        /// <param name="includeDescription">True to include description</param>
+        /// <returns>Documentation of the command</returns>
+        string GetUsageDocumentation(bool includeDescription = false);
     }
 }
