@@ -37,15 +37,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\FluentConsoleApplication\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\FluentConsoleApplication\FluentConsoleApplication.csproj">
       <Project>{1848198c-b83e-4bc2-831d-e14632de0561}</Project>
       <Name>FluentConsoleApplication</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\FluentConsoleApplication\Properties\AssemblyInfo.cs">
-      <Link>Properties\AssemblyInfo.cs</Link>
-    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
